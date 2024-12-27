@@ -9,7 +9,6 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
-using Security.Extensions;
 
 namespace DXApplication1.Module;
 
@@ -29,7 +28,6 @@ public sealed class DXApplication1Module : ModuleBase {
         RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule));
         RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Validation.ValidationModule));
         DevExpress.ExpressApp.Security.SecurityModule.UsedExportedTypes = DevExpress.Persistent.Base.UsedExportedTypes.Custom;
-        RequiredModuleTypes.Add(typeof(SecurityExtensionsModule));
     }
     public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
         ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);

@@ -26,5 +26,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DXApplication1.Module\DXApplication1.Module.csproj" />
+    <ProjectReference Include="..\..\Security.Extensions\Security.Extensions.csproj" />
   </ItemGroup>
 </Project>
