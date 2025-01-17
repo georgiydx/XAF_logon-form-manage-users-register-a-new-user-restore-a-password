@@ -101,7 +101,12 @@ public class ManageUsersOnLogonController : ViewController<DetailView> {
         // Refer to https://learn.microsoft.com/en-us/dotnet/api/system.net.mail.mailmessage for more details.
 #if DEBUG
         // Display a notification with the reset password URL, close automatically after 5 minutes
-        Application.ShowViewStrategy.ShowMessage(restorePasswordUrl, InformationType.Info, displayInterval: 300_000);
+        Application.ShowViewStrategy.ShowMessage(
+            $"""
+            (Debug mode) Follow the link below to open the password reset form:
+            {restorePasswordUrl}
+            """,
+            InformationType.Info, displayInterval: 300_000);
 #endif
     }
 
